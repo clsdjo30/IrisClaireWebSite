@@ -11,6 +11,7 @@ category: "Amour"
 author: "Celine D."
 tags: [amour, couple, relation]
 ---
+
 Nous avons tous entendu parler du triangle amoureux : cette situation complexe où trois personnes sont impliquées dans une relation d'amour et d'amitié, et dont l'équilibre est toujours précaire. Que vous soyez la personne "au milieu" ou l'une des deux autres, naviguer dans cette situation peut être une véritable montagne russe émotionnelle. Alors, comment en sortir ? Voici quelques conseils.
 ### Comprendre la Situation
 Le triangle amoureux est souvent une manifestation d'insatisfactions plus profondes ou de peurs non résolues. Il est donc crucial de comprendre ce qui vous a amené dans cette situation. Est-ce le frisson de l'interdit ? La peur de l'engagement ? Un manque d'estime de soi ? En répondant à ces questions, vous pourrez mieux comprendre vos motivations et celles des autres personnes impliquées
