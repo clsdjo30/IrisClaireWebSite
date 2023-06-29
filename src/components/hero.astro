@@ -6,21 +6,21 @@ import { Icon } from "astro-icon";
 ---
 
 <main
-  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24 md:px-32 bg-gradient-to-r from-violet-700 from-10% via-violet-800 to-violet-900 to-70%">
-  <div class="py-6 md:order-1 hidden md:block ">
+  class="flex flex-col md:flex-row place-items-center px-10  py-8 md:pt-12 md:pb-24 md:px-32 bg-gradient-to-r from-violet-700 from-10% via-violet-800 to-violet-900 to-70%">
+  <div class="py-6 md:order-1  md:block ">
     <Picture
       src={heroImage}
       alt="Astronaut in the air"
-      widths={[200, 400, 800]}
+      widths={[300, 600, 800]}
       aspectRatio="1:1"
-      sizes="(max-width: 800px) 100vw, 620px"
+      sizes="(max-width: 800px) 100vw, 720px"
       loading="eager"
       format="avif"
     />
   </div>
   <div>
     <h1
-      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter text-violet-100">
+      class="text-4xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter text-violet-100">
       Votre compagnon divinatoire personnalisé
     </h1>
     <p class="text-lg mt-4 text-violet-200 max-w-xl">
@@ -29,10 +29,10 @@ import { Icon } from "astro-icon";
     <div class="mt-6 flex flex-col sm:flex-row gap-10 ">
       <Link
         href="#"
-        size="xl"
+        size="lg"
         href="https://web3templates.com/templates/astroship-starter-website-template-for-astro"
         target="_blank"
-        class="flex gap-5 items-center justify-center rounded-xl bg-violet-100"
+        class="flex gap-5 items-center justify-center rounded-3xl bg-violet-100"
         style="primary"
         rel="noopener">
         <Icon class="text-violet-800 w-8 h-8" name="bx:bxl-apple" />
@@ -40,11 +40,11 @@ import { Icon } from "astro-icon";
         App Store
       </Link>
       <Link
-        size="xl"
+        size="md"
         style="primary"
         rel="noopener"
         href="https://github.com/surjithctly/astroship"
-        class="flex gap-5 items-center justify-center rounded-xl bg-violet-100"
+        class="flex gap-5 items-center justify-center rounded-3xl bg-violet-100"
         target="_blank">
         <Icon class="text-violet-800 hover:text-violet-100 w-8 h-8" name="bx:bxl-play-store" />
         Google Play
