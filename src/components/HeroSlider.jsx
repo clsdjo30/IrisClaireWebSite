@@ -12,8 +12,13 @@ import "pure-react-carousel/dist/react-carousel.es.css";
 
 export default function Carousel() {
   return (
-    <div className="flex justify-center">
-      <div className=" w-full ">
+    <>
+      <h1 className="lg:text-5xl md:text-4xl text-2xl font-semibold px-4 leading-10 text-yellow-600 mt-16 text-center">
+        Vos Intérogations ?
+      </h1>
+    <div className="2xl:mx-auto 2xl:container flex justify-center">
+
+      <div className=" 2xl:px-20 px-6 py-12 w-full lg:w-4/5">
         {/* Carousel for Small-Sized Screen */}
         <CarouselProvider
           className="relative block sm:hidden"
@@ -57,7 +62,7 @@ export default function Carousel() {
                     />
                     <div className="pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-0">
                       <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
-                      Épanouissement professionnel
+                        Épanouissement professionnel
                       </h1>
                     </div>
                   </div>
@@ -69,7 +74,7 @@ export default function Carousel() {
                     />
                     <div className="pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-0">
                       <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
-                      Épanouissement professionnel
+                        Épanouissement professionnel
                       </h1>
                     </div>
                   </div>
@@ -85,7 +90,7 @@ export default function Carousel() {
                     />
                     <div className="pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-0">
                       <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
-                      Un nouveau départ
+                        Un nouveau départ
                       </h1>
                     </div>
                   </div>
@@ -97,7 +102,7 @@ export default function Carousel() {
                     />
                     <div className="pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-0">
                       <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
-                      Un nouveau départ
+                        Un nouveau départ
                       </h1>
                     </div>
                   </div>
@@ -196,12 +201,12 @@ export default function Carousel() {
                       alt="sitting area"
                       className="object-center object-cover w-full h-full"
                     />
-                    <div className="absolute bottom-20 right-20 ">
-                      <h1 className="text-xl leading-5 lg:text-6xl lg:leading-normal font-medium text-white">
-                      Épanouissement professionnel
+                    <div className="absolute bottom-56 right-36 md:-right-26 w-1/3">
+                      <h1 className="text-xl leading-5 lg:text-6xl lg:leading-normal font-medium text-white text-center">
+                        Épanouissement professionnel
                       </h1>
                       <h2 className="text-center text-xl leading-9 lg:text-2xl lg:leading-normal font-medium text-white">
-                      Que dois-je faire pour obtenir le job de mes rêves ?
+                        Que dois-je faire pour obtenir le job de mes rêves ?
                       </h2>
                     </div>
                   </div>
@@ -227,7 +232,7 @@ export default function Carousel() {
                       alt="chairs"
                       className="object-center object-cover w-full h-full"
                     />
-                   <div className=" absolute bottom-44 -right-36 md:-right-26">
+                    <div className=" absolute bottom-56 -right-36 md:-right-26">
                       <h1 className="w-full text-4xl leading-5 lg:text-6xl  lg:leading-normal font-medium text-white">
                         Un nouveau départ
                       </h1>
@@ -307,7 +312,6 @@ export default function Carousel() {
           </div>
         </CarouselProvider>
       </div>
-
       <style>
         {`
                     .gallery-cell {
@@ -332,5 +336,6 @@ export default function Carousel() {
                 `}
       </style>
     </div>
+    </>
   );
 }
