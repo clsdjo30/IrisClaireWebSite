@@ -1,0 +1,56 @@
+---
+import { Picture } from "@astrojs/image/components";
+import phoneDeck from "assets/game_info.png";
+import Link from "@components/ui/link.astro";
+import { Icon } from "astro-icon";
+---
+
+<main
+  class="flex flex-col md:flex-row place-items-center px-10 py-8 md:pt-12 md:pb-12 md:px-44">
+ 
+  <div class="md:order-2">
+    <h1
+      class="text-4xl lg:text-4xl xl:text-5xl font-bold lg:tracking-tight xl:tracking-tighter text-yellow-600 -ml-3">
+      Votre Guide Spirituel Personnel
+    </h1>
+    <div class="flex justify-center mt-8">
+        <i class="fa-light fa-cards"></i>
+      <Icon
+        class="relative top-5 -left-4 text-purple-500  w-5 h-5"
+        name="bx:bxs-star"
+      />
+      <p class="text-lg mt-4 text-violet-800 max-w-xl">
+        <span class="text-orange-500 font-bold">Iris Claire</span>: un tarot authentique et moderne qui illumine votre voyage spirituel, vous offrant les réponses tant recherchées sur <span class="font-bold">l'amour</span>, la <span class="font-bold">carrière</span> et le <span class="font-bold">bien-être</span>.
+      </p>
+    </div>
+    <div class="flex justify-center">
+      <Icon
+        class="relative top-5 -left-4 text-purple-500  w-5 h-5"
+        name="bx:bxs-star"
+      />
+      <p class="text-lg mt-4 text-violet-800 max-w-xl">
+        Notre tarot divinatoire est désormais accessible à tous dans le monde numérique, offrant des lectures précises  grâce à des cartes sélectionnées et interprétées par nos experts.
+      </p>
+    </div>
+    <div class="flex justify-center">
+        <Icon
+          class="relative top-5 -left-4 text-purple-500  w-5 h-5"
+          name="bx:bxs-star"
+        />
+        <p class="text-lg mt-4 text-violet-800 max-w-xl">
+            Libérez le pouvoir du <span class="text-orange-500 font-bold">tarot instantané</span>, recevant des réponses immédiates qui éclairent votre chemin, sans attente ni contrainte de lieu.
+        </p>
+      </div>
+  </div>
+  <div class="py-6 md:block drop-shadow-2xl order-1 md:order-1">
+    <Picture
+      src={phoneDeck}
+      alt="Astronaut in the air"
+      widths={[300, 600, 400]}
+      aspectRatio="1:1"
+      sizes="(max-width: 800px) 100vw, 600px"
+      loading="eager"
+      format="avif"
+    />
+  </div>
+</main>

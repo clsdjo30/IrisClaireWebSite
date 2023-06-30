@@ -22,13 +22,13 @@ export default function Carousel() {
         {/* Carousel for Small-Sized Screen */}
         <CarouselProvider
           className="relative block sm:hidden"
-          isPlaying={true}
+          isPlaying={false}
           naturalSlideWidth={100}
           isIntrinsicHeight={true}
           totalSlides={3}
           interval={5000}
           playDirection="forward"
-          infinite={true}
+          infinite={false}
           step={1}>
           <div className="js-flickity flex justify-center items-center">
             <ButtonBack
@@ -60,10 +60,13 @@ export default function Carousel() {
                       alt="sitting area"
                       className="object-center object-cover w-full h-full"
                     />
-                    <div className="pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-0">
-                      <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
+                    <div className=" pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-10">
+                      <h2 className="text-3xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
                         Épanouissement professionnel
-                      </h1>
+                      </h2>
+                      <p className="text-center text-xl leading-9 lg:text-2xl lg:leading-normal font-medium text-white">
+                        Que dois-je faire pour obtenir le job de mes rêves ?
+                      </p>
                     </div>
                   </div>
                   <div className="relative w-full h-full lg:hidden">
@@ -72,10 +75,13 @@ export default function Carousel() {
                       alt="sitting area"
                       className="object-center object-cover w-full h-full"
                     />
-                    <div className="pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-0">
-                      <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
+                    <div className="w-full pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-10">
+                      <h2 className="text-3xl leading-5 lg:text-2xl lg:leading-normal font-bold text-white">
                         Épanouissement professionnel
-                      </h1>
+                      </h2>
+                      <p className="mt-3 text-lg leading-5 lg:text-2xl lg:leading-normal font-regular text-violet-800">
+                        Que dois-je faire pour obtenir le job de mes rêves ?
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -89,7 +95,7 @@ export default function Carousel() {
                       className="object-center object-cover w-full h-full"
                     />
                     <div className="pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-0">
-                      <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
+                      <h1 className="text-4xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
                         Un nouveau départ
                       </h1>
                     </div>
@@ -101,7 +107,7 @@ export default function Carousel() {
                       className="object-center object-cover w-full h-full"
                     />
                     <div className="pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-0">
-                      <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
+                      <h1 className="text-4xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
                         Un nouveau départ
                       </h1>
                     </div>

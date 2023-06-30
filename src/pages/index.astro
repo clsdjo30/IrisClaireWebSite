@@ -8,11 +8,13 @@ import Hero from "@components/hero.astro";
 import Testimonials from "@components/Testimonials.jsx";
 import HeroSlider from "@components/HeroSlider.jsx";
 import PresentApp from "@components/PresentApp.jsx";
+import WhyChoose from "@components/whychoose.astro";
 ---
 
 <Layout title="">
   <Container>
     <Hero />
+    <WhyChoose />
     <!-- <PresentApp /> -->
     <HeroSlider client:load/>
     <Testimonials />
