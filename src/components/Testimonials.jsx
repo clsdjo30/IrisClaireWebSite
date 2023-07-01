@@ -3,7 +3,7 @@ import React from "react";
 export default function Testimonial() {
     return (
         <>
-            <div className="bg-gradient-to-r from-violet-700 from-10% via-violet-800 to-violet-900 to-70%">
+            <section className="bg-gradient-to-r from-violet-700 from-10% via-violet-800 to-violet-900 to-70%">
                 
                 <h1 className="lg:text-5xl md:text-4xl text-4xl font-semibold px-4 leading-10 text-violet-100 text-center pt-10">Vos Avis</h1>
                 <div className="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:px-20 px-10 py-20 gap-6">
@@ -149,7 +149,7 @@ export default function Testimonial() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </>
     );
 }

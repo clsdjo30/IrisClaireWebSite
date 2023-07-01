@@ -1,16 +1,16 @@
 ---
 import { Picture } from "@astrojs/image/components";
-import phoneDeck from "assets/game_info.png";
-import patternBg from "assets/bg-pattern-3.png";
+import myAnswer from "assets/myanswer.png";
+import patternBg from "assets/bg-pattern.png";
 import { Icon } from "astro-icon";
 ---
 
 <section
   class="flex flex-col md:flex-row place-items-center px-10 py-8 md:pt-12 md:pb-12 md:px-44">
-  <div class="md:order-2">
+  <div class="md:order-1">
     <h1
       class="text-4xl lg:text-4xl xl:text-5xl font-bold lg:tracking-tight xl:tracking-tighter text-violet-800 -ml-3">
-      Votre Guide Spirituel Personnel
+      Un Suivi Complet de Votre Parcours
     </h1>
     <div class="flex justify-center mt-8">
       <Icon
@@ -18,12 +18,7 @@ import { Icon } from "astro-icon";
         name="bx:bxs-star"
       />
       <p class="text-lg mt-4 text-violet-800 max-w-xl">
-        <span class="text-orange-500 font-bold">Iris Claire</span>: un tarot
-        authentique et moderne qui illumine votre voyage spirituel, vous offrant
-        les réponses tant recherchées sur <span class="font-bold">l'amour</span
-        >, la <span class="font-bold">carrière</span> et le <span
-          class="font-bold">bien-être</span
-        >.
+        <span class="text-orange-500 font-bold">Iris Claire</span> vous permet de  consultez <span class="font-bold">votre historique</span> à tous moment.
       </p>
     </div>
     <div class="flex justify-center">
@@ -32,9 +27,7 @@ import { Icon } from "astro-icon";
         name="bx:bxs-star"
       />
       <p class="text-lg mt-4 text-violet-800 max-w-xl">
-        Notre tarot divinatoire est désormais accessible à tous dans le monde
-        numérique, offrant des lectures précises grâce à des cartes
-        sélectionnées et interprétées par nos experts.
+        Gardez une trace précieuse dà vos questions avec notre fonctionnalité d'historique consultable à tout moment.
       </p>
     </div>
     <div class="flex justify-center">
@@ -43,10 +36,7 @@ import { Icon } from "astro-icon";
         name="bx:bxs-star"
       />
       <p class="text-lg mt-4 text-violet-800 max-w-xl">
-        Libérez le pouvoir du <span class="text-orange-500 font-bold"
-          >tarot instantané</span
-        >, recevant des réponses immédiates qui éclairent votre chemin, sans
-        attente ni contrainte de lieu.
+        Ne laissez plus <span class="font-bold">vos questions</span> sans réponses ! Avec <span class="text-orange-500 font-bold">Iris Claire</span>, vous pouvez consulter votre tirage à tout moment, recevant ainsi les conseils dont vous avez besoin sans délai.
       </p>
     </div>
   </div>
@@ -62,7 +52,7 @@ import { Icon } from "astro-icon";
    />
     <Picture
     class="absolute top-8 left-0"
-    src={phoneDeck}
+    src={myAnswer}
     alt="Astronaut in the air"
     widths={[300, 600, 400]}
     aspectRatio="1:1"

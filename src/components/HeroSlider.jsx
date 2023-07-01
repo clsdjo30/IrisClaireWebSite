@@ -12,10 +12,12 @@ import "pure-react-carousel/dist/react-carousel.es.css";
 
 export default function Carousel() {
   return (
+  
     <>
-      <h1 className="lg:text-5xl md:text-4xl text-2xl font-semibold px-4 leading-10 text-yellow-600 mt-16 text-center">
-        Vos Intérogations ?
-      </h1>
+    <section>
+      <h2 className="lg:text-5xl md:text-4xl text-4xl font-semibold px-4 leading-10 text-yellow-600 mt-16 text-center">
+      Avec Iris Claire, votre avenir est entre vos mains
+      </h2>
     <div className="2xl:mx-auto 2xl:container flex justify-center">
 
       <div className=" 2xl:px-20 px-6 py-12 w-full lg:w-4/5">
@@ -64,7 +66,7 @@ export default function Carousel() {
                       <h2 className="text-3xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
                         Épanouissement professionnel
                       </h2>
-                      <p className="text-center text-xl leading-9 lg:text-2xl lg:leading-normal font-medium text-white">
+                      <p className="mt-3 text-md leading-5 lg:text-2xl lg:leading-normal font-bold text-violet-900">
                         Que dois-je faire pour obtenir le job de mes rêves ?
                       </p>
                     </div>
@@ -75,11 +77,11 @@ export default function Carousel() {
                       alt="sitting area"
                       className="object-center object-cover w-full h-full"
                     />
-                    <div className="w-full pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-10">
-                      <h2 className="text-3xl leading-5 lg:text-2xl lg:leading-normal font-bold text-white">
+                    <div className="w-full pl-6 pb-6 lg:pl-8 lg:pb-8 relative left-0 bottom-44">
+                      <h2 className="text-3xl leading-6 lg:text-2xl lg:leading-normal font-bold text-white">
                         Épanouissement professionnel
                       </h2>
-                      <p className="mt-3 text-lg leading-5 lg:text-2xl lg:leading-normal font-regular text-violet-800">
+                      <p className="mt-3 text-md leading-5 lg:text-2xl lg:leading-normal font-bold text-violet-900">
                         Que dois-je faire pour obtenir le job de mes rêves ?
                       </p>
                     </div>
@@ -95,9 +97,13 @@ export default function Carousel() {
                       className="object-center object-cover w-full h-full"
                     />
                     <div className="pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-0">
-                      <h1 className="text-4xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
+                      <h2 className="text-4xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
                         Un nouveau départ
-                      </h1>
+                      </h2>
+                      <p className="mt-3 text-md leading-5 lg:text-2xl lg:leading-normal font-bold text-violet-900">
+                        Évitez les pensées négatives et éclairez votre chemin
+                        vers le bonheur.
+                      </p>
                     </div>
                   </div>
                   <div className="relative w-full h-full lg:hidden">
@@ -106,10 +112,14 @@ export default function Carousel() {
                       alt="chairs"
                       className="object-center object-cover w-full h-full"
                     />
-                    <div className="pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-0">
-                      <h1 className="text-4xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
+                    <div className="pl-6 pb-6 lg:pl-8 lg:pb-8 relative left-0 bottom-44">
+                      <h2 className="text-4xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
                         Un nouveau départ
-                      </h1>
+                      </h2>
+                      <p className="mt-3 text-md leading-5 lg:text-2xl lg:leading-normal font-bold text-violet-300">
+                        Évitez les pensées négatives et éclairez votre chemin
+                        vers le bonheur.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -342,6 +352,9 @@ export default function Carousel() {
                 `}
       </style>
     </div>
+    </section>
     </>
+    
   );
+
 }
