@@ -8,10 +8,10 @@ export interface Props {
   title: string;
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+const canonicalURL = new URL("https://chimerical-caramel-133df7.netlify.app/", Astro.site).toString();
 
 const resolvedImageWithDomain = new URL(
-  "/opengraph.jpg",
+  "/opengraphImage.jpg",
   Astro.site
 ).toString();
 
@@ -42,7 +42,7 @@ const makeTitle = title
       }}
       openGraph={{
         basic: {
-          url: "https://chimerical-caramel-133df7.netlify.app", 
+          url: canonicalURL,
           type: "website",
           title: `Iris Claire - Votre Portail vers l'Univers Mystique du Tarot`,
           image: resolvedImageWithDomain,
