@@ -1,19 +1,92 @@
-<footer class="my-20">
-  <p class="text-center text-sm text-slate-500">
-    Copyright © {new Date().getFullYear()} Astroship. All rights reserved.
-  </p>
-  <!--
-    Can we ask you a favor 🙏
-    Please keep this backlink on your website if possible.
-    or Purchase a commercial license from https://web3templates.com
-  -->
-  <p class="text-center text-xs text-slate-500 mt-1">
-    Made by <a
-      href="https://web3templates.com"
-      target="_blank"
-      rel="noopener"
-      class="hover:underline">
-      Web3Templates
-    </a>
-  </p>
+---
+import { Icon } from "astro-icon";
+---
+
+<footer
+  class="bg-gradient-to-r from-violet-700 from-10% via-violet-800 to-violet-900 to-70%">
+  <div
+    class="container mx-auto flex flex-col justify-center items-start space-y-26 px-26 pb-8 pt-12 md:flex-row md:space-y-0 md:space-x-0 md:px-12">
+    <div class="flex w-full flex-col text-center md:w-1/5 md:text-left">
+      <div class="w-full text-lg font-extrabold md:w-fit md:text-left">
+        <a href="/" class="text-3xl ml-2"
+          ><span class="font-bold text-violet-200">Iris</span>
+          <span class="text-orange-500">Claire</span>
+        </a>
+        <!-- Code block for white alternative button starts -->
+        <button
+          class="w-8/12 mx-2 my-2 bg-white transition duration-150 ease-in-out rounded text-gray-800 border border-gray-300 px-6 py-2 text-xs hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">
+          Join our Newsletter
+        </button>
+        <!-- Code block for white alternative button ends -->
+      </div>
+    </div>
+    <div class="w-full text-center text-violet-200 md:w-1/5 md:text-left mt-10 md:mt-0">
+      <div class="text-sm font-semibold">Company</div>
+      <ul class="flex md:flex-col justify-center gap-10 md:gap-0 text-xs">
+        <li class="pt-3">
+          <a
+            class="underline decoration-transparent underline-offset-4 transition hover:decoration-slate-700"
+            href="#"
+            rel="noopener noreferrer"
+            target="_blank">
+            About
+          </a>
+        </li>
+        <li class="pt-3">
+          <a
+            class="underline decoration-transparent underline-offset-4 transition hover:decoration-slate-700"
+            href="#"
+            rel="noopener noreferrer"
+            target="_blank">
+            Team
+          </a>
+        </li>
+        <li class="pt-3">
+          <a
+            class="underline decoration-transparent underline-offset-4 transition hover:decoration-slate-700"
+            href="#"
+            rel="noopener noreferrer"
+            target="_blank">
+            Blog
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="w-full text-center text-violet-200 md:w-1/5 md:text-left mt-5 md:mt-0">
+      <div class="text-sm font-semibold">Legal</div>
+      <ul class="flex md:flex-col justify-center gap-10 md:gap-0 text-xs" >
+        <li class="pt-3">
+          <a
+            class="underline decoration-transparent underline-offset-4 transition hover:decoration-slate-700"
+            href="#"
+            rel="noopener noreferrer"
+            target="_blank">
+            Terms of service
+          </a>
+        </li>
+        <li class="pt-3">
+          <a
+            class="underline decoration-transparent underline-offset-4 transition hover:decoration-slate-700"
+            href="#"
+            rel="noopener noreferrer"
+            target="_blank">
+            Privacy policy
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="w-full text-center text-violet-200 md:w-1/5 md:text-left mt-5 md:mt-0">
+      <div class="text-sm font-semibold">Follow</div>
+      <!-- List des icone reseaux sociaux -->
+      <div class="flex justify-center md:justify-start gap-4 mt-3">
+        <Icon name="bx:bxl-instagram" class="text-violet-200 h-8 w-8" />
+        <Icon name="bx:bxl-facebook" class="text-violet-200 h-8 w-8" />
+        <Icon name="bx:bxl-pinterest" class="text-violet-200 h-8 w-8" />
+      </div>
+    </div>
+  </div>
+  <div
+    class="container mx-auto border-t border-slate-200 p-8 text-center text-sm text-violet-200 dark:border-violet-200 md:flex-row md:px-12">
+    Made in Montpellier with 🐕  ©Copyright 2023 by DIGIX SAS. All rights reserved.
+  </div>
 </footer>
