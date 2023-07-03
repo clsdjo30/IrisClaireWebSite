@@ -9,6 +9,7 @@ import Testimonials from "@components/Testimonials.astro";
 import HeroSlider from "@components/HeroSlider.jsx";
 import WhyChoose from "@components/whychoose.astro";
 import MyAnswer from "@components/myanswer.astro";
+import Faq from "@components/Faq.jsx";
 ---
 
 <Layout title="">
@@ -18,8 +19,6 @@ import MyAnswer from "@components/myanswer.astro";
     <HeroSlider client:load/>
     <MyAnswer />
     <Testimonials />
-    <Features />
-    <Logos />
-    <Cta />
+    <Faq client:load/>
   </Container>
 </Layout>
