@@ -23,7 +23,7 @@ const posts = data.data;
 
     <div class="container w-full  mx-auto flex flex-wrap py-6">
       <div class="w-full md:w-2/3 flex flex-col items-center px-3">
-        <BlogHeader posts={posts} />
+        <BlogHeader posts={posts} client:load />
         <BlogGrid posts={posts} client:load />
       </div>
 

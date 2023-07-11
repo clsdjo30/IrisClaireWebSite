@@ -3,13 +3,11 @@ import React from "react";
 export default function BlogGridItem({ post }) {
   const { title } = post;
 
-  
-
   const featuredImage = post.featureImage.data[0].attributes;
   const category = post.category.data?.attributes?.name;
   const slug = post.slug;
 
-  console.log(featuredImage.formats.medium?.url)
+ 
 
   let { content } = post;
   content = content.length > 100 ? content.substring(0, 100) + "..." : content;

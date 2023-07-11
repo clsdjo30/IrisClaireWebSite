@@ -10,7 +10,7 @@ export default function BlogHeader({ posts }) {
       ? aheadContent.substring(0, 100) + "..."
       : aheadContent;
   const aheadSlug = isAhead.attributes.slug;
-  console.log("1 Slug", aheadSlug);
+  // console.log("1 Slug", aheadSlug);
 
   // isSecond
   const isSecond = posts.find((post) => post.attributes.isSecond === true);
@@ -39,7 +39,7 @@ export default function BlogHeader({ posts }) {
     <div className="w-full flex flex-row flex-wrap mx-auto justify-content-center">
       <div className="w-full pt-64 relative mb-3 lg:mb-0.5">
         <img
-          src={`http://iris-api.candcom.com/${aheadImage}`}
+          src={`http://iris-api.candcom.com${aheadImage}`}
           alt="gallery"
           className="w-full object-cover h-full object-center block absolute inset-0 "
         />
@@ -75,7 +75,7 @@ export default function BlogHeader({ posts }) {
             <img
               alt="gallery"
               className="w-full object-cover h-10/12 object-center block opacity-75 absolute inset-0"
-              src={`http://iris-api.candcom.com/${secondPostImage}`}
+              src={`http://iris-api.candcom.com${secondPostImage}`}
             />
             <div className="z-20 w-full bg-slate-100 opacity-75 py-5 px-6">
               <div className="z-10 w-full">
@@ -107,7 +107,7 @@ export default function BlogHeader({ posts }) {
             <img
               alt="gallery"
               className="w-full object-cover h-10/12 object-center block opacity-75 absolute inset-0"
-              src={`http://iris-api.candcom.com/${thirdPostImage}`}
+              src={`http://iris-api.candcom.com${thirdPostImage}`}
             />
             <div className="z-20 w-full bg-slate-100 opacity-75 py-5 px-6">
               <div className="z-10 w-full">
