@@ -24,7 +24,7 @@ export default function BlogGridItem({ post }) {
         </div>
         <img
           className="relative object-cover z-0"
-          src={`http://iris-api.candcom.com${featuredImage.formats.medium?.url}`}
+          src={`http://iris-api.candcom.com/public${featuredImage.formats.medium?.url}`}
         />
       </div>
       <div>
