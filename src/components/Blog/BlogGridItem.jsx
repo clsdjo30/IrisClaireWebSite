@@ -9,7 +9,7 @@ export default function BlogGridItem({ post }) {
   const category = post.category.data?.attributes?.name;
   const slug = post.slug;
 
-  console.log(category)
+  console.log(featuredImage.formats.medium?.url)
 
   let { content } = post;
   content = content.length > 100 ? content.substring(0, 100) + "..." : content;
@@ -24,7 +24,7 @@ export default function BlogGridItem({ post }) {
         </div>
         <img
           className="relative object-cover z-0"
-          src={`http://iris-api.candcom.com/${featuredImage.formats.medium?.url}`}
+          src={`http://iris-api.candcom.com${featuredImage.formats.medium?.url}`}
         />
       </div>
       <div>
