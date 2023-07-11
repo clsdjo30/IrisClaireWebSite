@@ -5,10 +5,14 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import react from "@astrojs/react";
 
+import netlify from "@astrojs/netlify/functions";
+
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astroship.web3templates.com",
+  site: "https://chimerical-caramel-133df7.netlify.app",
   integrations: [tailwind(), image({
     serviceEntryPoint: "@astrojs/image/sharp"
-  }), mdx(), sitemap(), react()]
+  }), mdx(), sitemap(), react()],
+  output: "server",
+  adapter: netlify()
 });

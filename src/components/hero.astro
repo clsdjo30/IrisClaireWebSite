@@ -6,8 +6,8 @@ import { Icon } from "astro-icon";
 ---
 
 <main
-  class="flex flex-col md:flex-row place-items-center px-10  py-8 md:pt-12 md:pb-24 md:px-32 bg-gradient-to-r from-violet-700 from-10% via-violet-800 to-violet-900 to-70%">
-  <div class="py-6 md:order-1  md:block ">
+  class="flex flex-col md:flex-row place-items-center px-10 py-8 md:pt-12 md:pb-24 md:px-32 bg-gradient-to-r from-violet-700 from-10% via-violet-800 to-violet-900 to-70%">
+  <div class="py-6 md:order-1 md:block">
     <Picture
       src={heroImage}
       alt="Astronaut in the air"
@@ -24,9 +24,11 @@ import { Icon } from "astro-icon";
       Votre compagnon divinatoire personnalisé
     </h1>
     <p class="text-lg mt-4 text-violet-200 max-w-xl">
-      Plongez dans votre avenir et découvrez les mystères qui l'entourent ! Vous obtiendrez des réponses qui vont aideront à mieux vous comprendre et à prendre des décisions. 
+      Plongez dans votre avenir et découvrez les mystères qui l'entourent ! Vous
+      obtiendrez des réponses qui vont aideront à mieux vous comprendre et à
+      prendre des décisions.
     </p>
-    <div class="mt-6 flex flex-col sm:flex-row gap-10 ">
+    <div class="mt-6 flex flex-col sm:flex-row gap-10">
       <Link
         href="#"
         size="lg"
@@ -46,7 +48,10 @@ import { Icon } from "astro-icon";
         href="https://github.com/surjithctly/astroship"
         class="flex gap-5 items-center justify-center rounded-3xl bg-violet-100"
         target="_blank">
-        <Icon class="text-violet-800 hover:text-violet-100 w-8 h-8" name="bx:bxl-play-store" />
+        <Icon
+          class="text-violet-800 hover:text-violet-100 w-8 h-8"
+          name="bx:bxl-play-store"
+        />
         Google Play
       </Link>
     </div>

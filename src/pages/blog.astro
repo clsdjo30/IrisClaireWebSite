@@ -1,76 +1,60 @@
 ---
-import { getCollection } from "astro:content";
-import { Picture } from "@astrojs/image/components";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
+import BlogGrid from "@components/Blog/BlogGrid.jsx";
+import BlogHeader from "@components/Blog/BlogHeader";
 
-// Filter blog entries with 'draft: false' & date before current date
-const publishedBlogEntries = await getCollection("blog", ({ data }) => {
-  return !data.draft && data.publishDate < new Date();
-});
+const response = await fetch(`http://iris-api.candcom.com/api/posts?populate=*`);
+const data = await response.json();
+const posts = data.data;
 
-// Sort content entries by publication date
-publishedBlogEntries.sort(function (a, b) {
-  return b.data.publishDate.valueOf() - a.data.publishDate.valueOf();
-});
 ---
 
 <Layout title="Blog">
-  <Container>
+  <Container class="w-10/12 pb-3 bg-slate-100 h-auto mb-10 pt-6">
     <Sectionhead>
-      <Fragment slot="title">Our Blog</Fragment>
+      <Fragment slot="title">Le Blog d'Iris Claire</Fragment>
       <Fragment slot="desc">
-        We write about building startups and thoughts going on our mind.
+        Tous les sujets du moment sur notre blog : astrologie, horoscope,
+        spiritualité, rituel, développement personnel…
       </Fragment>
     </Sectionhead>
-    <main class="mt-16">
-      <ul class="grid gap-16 max-w-4xl mx-auto">
-        {
-          publishedBlogEntries.map((blogPostEntry, index) => (
-            <li>
-              <a href={`/blog/${blogPostEntry.slug}`}>
-                <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
-                  <Picture
-                    src={blogPostEntry.data.image.src}
-                    alt={blogPostEntry.data.image.alt}
-                    sizes="(max-width: 800px) 100vw, 800px"
-                    widths={[200, 400, 800]}
-                    aspectRatio="16:9"
-                    background="#ffffff"
-                    fit="cover"
-                    position="center"
-                    loading={index <= 2 ? "eager" : "lazy"}
-                    decoding={index <= 2 ? "sync" : "async"}
-                    class="w-full rounded-md"
-                  />
-                  <div>
-                    <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
-                      {blogPostEntry.data.category}
-                    </span>
 
-                    <h2 class="text-3xl font-semibold leading-snug tracking-tight mt-1 ">
-                      {blogPostEntry.data.title}
-                    </h2>
+    <div class="container w-full  mx-auto flex flex-wrap py-6">
+      <div class="w-full md:w-2/3 flex flex-col items-center px-3">
+        <BlogHeader posts={posts} />
+        <BlogGrid posts={posts} client:load />
+      </div>
 
-                    <div class="flex gap-2 mt-3">
-                      <span class="text-gray-400">
-                        {blogPostEntry.data.author}
-                      </span>
-                      <span class="text-gray-400">• </span>
-                      <time
-                        class="text-gray-400"
-                        datetime={blogPostEntry.data.publishDate.toISOString()}>
-                        {blogPostEntry.data.publishDate.toDateString()}
-                      </time>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </main>
+      <aside
+        class="w-full md:w-1/3 flex flex-col items-center md:px-10">
+        <div class=" bg-gradient-to-r from-violet-700 from-10% via-violet-800 to-violet-900 to-70% py-8 px-8 rounded-md">
+        <h3 class="mt-10 text-xl font-bold text-violet-100 text-center">
+          Votre compagnon divinatoire personnalisé
+        </h3>
+        <div class="mt-10">
+          <img src="/header.png" alt="Astronaut in the air" class="w-96" />
+        </div>
+        <div class="mb-6">
+          <p class="text-sm mt-4 text-violet-200 max-w-xl text-justify">
+            Plongez dans votre avenir et découvrez les mystères qui l'entourent
+            ! Vous obtiendrez des réponses qui vont aideront à mieux vous
+            comprendre et à prendre des décisions.
+          </p>
+          <div class="w-full mt-20 flex flex-col gap-5">
+            <button
+              class="flex mx-auto  text-violet-900 font-semibold rounded-full bg-violet-100 border-0 py-2 px-16 focus:outline-none hover:bg-violet-600 hover:text-violet-100 text-lg">
+              App Store
+            </button>
+            <button
+              class="flex mx-auto text-violet-900 font-semibold rounded-full bg-violet-100 border-0 py-2 px-16 focus:outline-none hover:bg-violet-600 hover:text-violet-100 text-lg">
+              Play Store
+            </button>
+          </div>
+        </div>
+        </div>
+      </aside>
+    </div>
   </Container>
 </Layout>
