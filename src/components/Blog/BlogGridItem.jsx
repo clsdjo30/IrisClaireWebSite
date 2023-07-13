@@ -6,6 +6,7 @@ export default function BlogGridItem({ post }) {
   const featuredImage = post.featureImage.data[0].attributes;
   const category = post.category.data?.attributes?.name;
   const slug = post.slug;
+  console.log("slug", slug)
 
  
 
