@@ -4,55 +4,121 @@ import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import BlogGrid from "@components/Blog/BlogGrid.jsx";
 import BlogHeader from "@components/Blog/BlogHeader";
+import { Breadcrumbs } from "astro-breadcrumbs";
+import "../styles/styles.scss";
 
-const response = await fetch(`http://iris-api.candcom.com/api/posts?populate=*`);
+const response = await fetch(
+  `http://iris-api.candcom.com/api/posts?populate=*`
+);
 const data = await response.json();
 const posts = data.data;
 
+async function getCategories() {
+  const response = await fetch(
+    "https://iris-api.candcom.com/api/categories?populate=*"
+  );
+  const categoriesData = await response.json();
+  const categoriesList = categoriesData.data;
+
+  return categoriesList;
+}
+
+const categoriesList = await getCategories();
+
+console.log(categoriesList);
+
+const customCrumbs = [
+  {
+    text: "Home",
+    href: "#",
+  },
+  ...categoriesList.map((category) => ({
+    text: category.attributes.name,
+    href: `#${category.id}`,
+  })),
+];
 ---
 
 <Layout title="Blog">
   <Container class="w-10/12 pb-3 bg-slate-100 h-auto mb-10 pt-6">
     <Sectionhead>
-      <Fragment slot="title">Le Blog d'Iris Claire</Fragment>
+      <Fragment slot="title">Le Blog d'Iris Clair</Fragment>
       <Fragment slot="desc">
         Tous les sujets du moment sur notre blog : astrologie, horoscope,
         spiritualité, rituel, développement personnel…
       </Fragment>
     </Sectionhead>
+    <div class="pt-6 mx-4">
+      <Breadcrumbs
+        mainBemClass="c-breadcrumbs"
+        indexText="Home"
+        ariaLabel="a structured list of pages"
+        crumbs={customCrumbs}>
+        <svg
+          slot="index"
+          aria-label="Home Page"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          ><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z">
+          </path><polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
 
-    <div class="container w-full  mx-auto flex flex-wrap py-6">
+        <!-- Add icon or text here (chevron-right icon?) -->
+        <svg
+          slot="separator"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          ><polyline points="9 18 15 12 9 6"></polyline></svg
+        >
+      </Breadcrumbs>
+    </div>
+
+    <div class="container w-full mx-auto flex flex-wrap py-6">
       <div class="w-full md:w-2/3 flex flex-col items-center px-3">
         <BlogHeader posts={posts} client:load />
         <BlogGrid posts={posts} client:load />
       </div>
 
-      <aside
-        class="w-full md:w-1/3 flex flex-col items-center md:px-10">
-        <div class=" bg-gradient-to-r from-violet-700 from-10% via-violet-800 to-violet-900 to-70% py-8 px-8 rounded-md">
-        <h3 class="mt-10 text-xl font-bold text-violet-100 text-center">
-          Votre compagnon divinatoire personnalisé
-        </h3>
-        <div class="mt-10">
-          <img src="/header.png" alt="Astronaut in the air" class="w-96" />
-        </div>
-        <div class="mb-6">
-          <p class="text-sm mt-4 text-violet-200 max-w-xl text-justify">
-            Plongez dans votre avenir et découvrez les mystères qui l'entourent
-            ! Vous obtiendrez des réponses qui vont aideront à mieux vous
-            comprendre et à prendre des décisions.
-          </p>
-          <div class="w-full mt-20 flex flex-col gap-5">
-            <button
-              class="flex mx-auto  text-violet-900 font-semibold rounded-full bg-violet-100 border-0 py-2 px-16 focus:outline-none hover:bg-violet-600 hover:text-violet-100 text-lg">
-              App Store
-            </button>
-            <button
-              class="flex mx-auto text-violet-900 font-semibold rounded-full bg-violet-100 border-0 py-2 px-16 focus:outline-none hover:bg-violet-600 hover:text-violet-100 text-lg">
-              Play Store
-            </button>
+      <aside class="w-full md:w-1/3 flex flex-col items-center md:px-10">
+        <div
+          class="bg-gradient-to-r from-violet-700 from-10% via-violet-800 to-violet-900 to-70% py-8 px-8 rounded-md">
+          <h3 class="mt-10 text-xl font-bold text-violet-100 text-center">
+            Votre compagnon divinatoire personnalisé
+          </h3>
+          <div class="mt-10">
+            <img src="/header.png" alt="Astronaut in the air" class="w-96" />
           </div>
-        </div>
+          <div class="mb-6">
+            <p class="text-sm mt-4 text-violet-200 max-w-xl text-justify">
+              Plongez dans votre avenir et découvrez les mystères qui
+              l'entourent ! Vous obtiendrez des réponses qui vont aideront à
+              mieux vous comprendre et à prendre des décisions.
+            </p>
+            <div class="w-full mt-20 flex flex-col gap-5">
+              <button
+                class="flex mx-auto text-violet-900 font-semibold rounded-full bg-violet-100 border-0 py-2 px-16 focus:outline-none hover:bg-violet-600 hover:text-violet-100 text-lg">
+                App Store
+              </button>
+              <button
+                class="flex mx-auto text-violet-900 font-semibold rounded-full bg-violet-100 border-0 py-2 px-16 focus:outline-none hover:bg-violet-600 hover:text-violet-100 text-lg">
+                Play Store
+              </button>
+            </div>
+          </div>
         </div>
       </aside>
     </div>

@@ -1,0 +1,9 @@
+
+
+@use 'astro-breadcrumbs/breadcrumbs.scss' with (
+  $bem-root: 'c-breadcrumbs',
+  $spacing-vertical-separator: 10px,
+  $color-separator: orange,
+  $size-font: 18px, 
+  $color-hover-link: rgb(197, 61, 199)
+);
