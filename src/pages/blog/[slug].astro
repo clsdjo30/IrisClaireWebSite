@@ -32,7 +32,7 @@ console.log(slug);
 
 <SinglePostLayout
   title={title}
-  image={featureImage}
+  image={featureImage.data[0].attributes?.url}
   description={description}
   imageAlt={imagedescription}
   author={author.data.attributes?.name}
