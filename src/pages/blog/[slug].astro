@@ -1,32 +1,48 @@
 ---
-import BaseLayout from "@layouts/Layout.astro";
+import SinglePostLayout from "@layouts/SinglePostLayout.astro";
 import SingleBlogItem from "@components/Blog/SingleBlogItem.jsx";
 import { SEO } from "astro-seo";
 import type { APIContext } from "astro";
 import { previousThursday } from "date-fns";
 import { isAspectRatioString } from "@astrojs/image/dist/loaders";
 
-const response = await fetch(`http://iris-api.candcom.com/api/posts?populate=*`);
+const response = await fetch(
+  `http://iris-api.candcom.com/api/posts?populate=*`
+);
 const data = await response.json();
 const posts = data.data;
-const {slug} = Astro.params;
-
+const { slug } = Astro.params;
 
 const post = posts.find((post) => post.attributes.slug === slug);
 
 if (!post) return Astro.redirect("/404");
-const { title, publishedAt, content, author, featureImage, readingTime} = post.attributes;
+const {
+  title,
+  publishedAt,
+  content,
+  author,
+  featureImage,
+  readingTime,
+  description,
+  imagedescription,
+} = post.attributes;
 
+console.log(slug);
 ---
 
-
-<BaseLayout title={title}>
-  <SingleBlogItem  
-  title={title} 
-  publishedAt={publishedAt}
-  content={content}
-  author={author}
-  featureImage={featureImage}
-  readingTime={readingTime}  
+<SinglePostLayout
+  title={title}
+  image={featureImage.data[0].attributes.url}
+  description={description}
+  imageAlt={imagedescription}
+  author={author.data.attributes?.name}
+  slug={slug}>
+  <SingleBlogItem
+    title={title}
+    publishedAt={publishedAt}
+    content={content}
+    author={author}
+    featureImage={featureImage}
+    readingTime={readingTime}
   />
-</BaseLayout>
+</SinglePostLayout>

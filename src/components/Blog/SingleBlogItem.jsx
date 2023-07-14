@@ -2,7 +2,7 @@ import { formatDistance, format } from 'date-fns';
 import ReactMarkdown from 'react-markdown';
 export default function SingleBlog(  { title, publishedAt, content, author, featureImage, readingTime } ) {
     const imageUrl = featureImage.data[0].attributes.formats.medium.url;
-        console.log('GROSSE IMAGE', imageUrl)
+       
     return (
         <>
             <div className=" my-4 text-center">

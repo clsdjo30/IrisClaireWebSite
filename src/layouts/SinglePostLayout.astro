@@ -6,19 +6,27 @@ import "@fontsource/inter/variable.css";
 
 export interface Props {
   title: string; 
+  image: string;
+  description: string;
+  imageAlt: string;
+  author: string;
+  slug: string | any;
 }
+const { title, image, description, imageAlt, author, slug} = Astro.props;
+
 
 const canonicalURL = new URL(
   "https://chimerical-caramel-133df7.netlify.app/",
   Astro.site
 ).toString();
 
+const makeUrl = new URL(slug, Astro.site).toString();
+
 const resolvedImageWithDomain = new URL(
-  "../../opengraph.jpg",
+  image,
   Astro.site
 ).toString();
 
-const { title } = Astro.props;
 
 const makeTitle = title
   ? title + " | " + "Le Blog d'Iris Clair"
@@ -36,22 +44,22 @@ const makeTitle = title
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
-      description="Tous les sujets du moment sur notre blog : astrologie, horoscope, spiritualité, rituel, développement personnel…"
+      description= {description}
       canonical={canonicalURL}
       twitter={{
-        creator: "@PlusLoinCece",
-        site: "www.irisclaire.online",
+        creator: author,
+        site: Astro?.site?.hostname,
         card: "summary_large_image",
       }}
       openGraph={{
         basic: {
-          url: "/opengraph.jpg",
-          type: "website",
-          title: `Iris Claire - Votre Portail vers l'Univers Mystique du Tarot`,
-          image: "/opengraph.jpg",
+          url: makeUrl,
+          type: "article",
+          title: title,
+          image: resolvedImageWithDomain,
         },
         image: {
-          alt: "Iris Claire Homepage Screenshot",
+          alt: imageAlt,
         },
       }}
     />
