@@ -32,7 +32,6 @@ const customCrumbs = [
     href: "/blog",
   },
   ...categoriesList.map((category) => ({
-   
     text: category.attributes?.name,
     href: `/blog/${category.attributes?.name}`,
   })),
@@ -42,7 +41,7 @@ const customCrumbs = [
 ---
 
 <Layout title="Blog">
-  <Container class="w-full md:w-10/12 pb-3 bg-slate-100 h-auto mb-10 pt-6 px-3">
+  <Container class="w-full md:w-10/12 pb-3 bg-slate-100 h-auto mb-10 pt-6">
     <Sectionhead>
       <Fragment slot="title">Le Blog d'Iris Clair</Fragment>
       <Fragment slot="desc">
@@ -95,7 +94,7 @@ const customCrumbs = [
         <BlogGrid posts={posts} client:load />
       </div>
 
-      <aside class="w-full md:w-1/3 flex flex-col items-center md:px-10">
+      <aside class="w-full md:w-1/3 flex flex-col items-center px-5 mt-10 md:px-10">
         <div
           class="bg-gradient-to-r from-violet-700 from-10% via-violet-800 to-violet-900 to-70% py-8 px-8 rounded-md">
           <h3 class="mt-10 text-xl font-bold text-violet-100 text-center">

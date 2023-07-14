@@ -55,7 +55,7 @@ export default function BlogHeader({ posts }) {
               href={`/blog/${aheadSlug}`}
               className="mt-3 text-orange-500 inline-flex items-center font-semibold">
               Lire la suite
-              <svg
+              {/* <svg
                 fill="none"
                 stroke="currentColor"
                 stroke-linecap="round"
@@ -64,7 +64,7 @@ export default function BlogHeader({ posts }) {
                 className="w-4 h-4 ml-2"
                 viewBox="0 0 24 24">
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
-              </svg>
+              </svg> */}
             </a>
           </div>
         </div>
@@ -87,7 +87,7 @@ export default function BlogHeader({ posts }) {
                   href={`/blog/${secondSlug}`}
                   className="mt-3 text-orange-500 inline-flex items-center text-xs">
                   Lire la suite
-                  <svg
+                  {/* <svg
                     fill="none"
                     stroke="currentColor"
                     stroke-linecap="round"
@@ -96,7 +96,7 @@ export default function BlogHeader({ posts }) {
                     className="w-4 h-4 ml-2"
                     viewBox="0 0 24 24">
                     <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
+                  </svg> */}
                 </a>
               </div>
             </div>
@@ -119,7 +119,7 @@ export default function BlogHeader({ posts }) {
                   href={`/blog/${thirdSlug}`}
                   className="mt-3 text-orange-500 inline-flex items-center text-xs">
                   Lire la suite
-                  <svg
+                  {/* <svg
                     fill="none"
                     stroke="currentColor"
                     stroke-linecap="round"
@@ -128,7 +128,7 @@ export default function BlogHeader({ posts }) {
                     className="w-4 h-4 ml-2"
                     viewBox="0 0 24 24">
                     <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
+                  </svg> */}
                 </a>
               </div>
             </div>

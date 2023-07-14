@@ -7,7 +7,6 @@ export default function BlogGridItem({ post }) {
   const category = post.category.data?.attributes?.name;
   const categorySlug = post.category.data?.attributes?.slug;
   const slug = post.slug; 
-  console.log(categorySlug)
 
   let { content } = post;
   content = content.length > 100 ? content.substring(0, 100) + "..." : content;
