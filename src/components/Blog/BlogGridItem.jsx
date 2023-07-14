@@ -5,7 +5,9 @@ export default function BlogGridItem({ post }) {
 
   const featuredImage = post.featureImage.data[0].attributes;
   const category = post.category.data?.attributes?.name;
+  const categorySlug = post.category.data?.attributes?.slug;
   const slug = post.slug; 
+  console.log(categorySlug)
 
   let { content } = post;
   content = content.length > 100 ? content.substring(0, 100) + "..." : content;
@@ -34,7 +36,7 @@ export default function BlogGridItem({ post }) {
       <div className="flex justify-between my-4 items-center">
         <div className="inline-flex rounded-md ">
           <a
-            href={`/blog/${slug}`}
+            href={`/blog/${categorySlug}/${slug}`}
             className="inline-flex items-center justify-center px-3 py-1 border border-transparent text-xs font-medium rounded-md text-white bg-violet-500 hover:bg-violet-400">
             Lire la suite
           </a>

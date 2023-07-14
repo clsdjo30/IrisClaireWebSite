@@ -32,8 +32,9 @@ const customCrumbs = [
     href: "/blog",
   },
   ...categoriesList.map((category) => ({
-    text: category.attributes.name,
-    href: `/blog/category/${category.attributes.name}`,
+   
+    text: category.attributes?.name,
+    href: `/blog/${category.attributes?.name}`,
   })),
 ];
 

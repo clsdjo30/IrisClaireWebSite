@@ -5,12 +5,13 @@ import Sectionhead from "@components/sectionhead.astro";
 import BlogGrid from "@components/Blog/BlogGrid.jsx";
 import BlogHeader from "@components/Blog/BlogHeader";
 import { Breadcrumbs } from "astro-breadcrumbs";
-import "../../../styles/styles.scss";
+import "../../styles/styles.scss";
 
 const response = await fetch(`http://iris-api.candcom.com/api/posts?populate=*`);
 const data = await response.json();
 const posts = data.data;
 const { category } = Astro.params;
+
 // recuperer les posts de la categorie
 const categoryPosts = posts.filter((post) => post.attributes.category.data.attributes.name === category);
 
@@ -30,8 +31,8 @@ const customCrumbs = [
     href: "/blog",
   },
   ...categoriesList.map((category) => ({
-    text: category.attributes.name,
-    href: `/blog/category/${category.attributes.name}`,
+    text: category.attributes?.name,
+    href: `/blog/${category.attributes?.name}`,
   })),
 ];
 
