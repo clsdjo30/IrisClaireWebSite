@@ -15,16 +15,19 @@ export interface Props {
 const { title, image, description, imageAlt, author, slug} = Astro.props;
 
 const canonicalURL = new URL(
-  "https://chimerical-caramel-133df7.netlify.app/",
+  Astro.url.pathname,
   Astro.site
 ).toString();
 
-const makeUrl = new URL(slug, Astro.site).toString();
+const makeUrl = new URL(image, Astro.site).toString();
+
+console.log(canonicalURL)
 
 const resolvedImageWithDomain = new URL(
   image,
   Astro.site
 ).toString();
+console.log(resolvedImageWithDomain)
 
 
 const makeTitle = title
