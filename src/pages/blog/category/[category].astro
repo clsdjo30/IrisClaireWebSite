@@ -10,15 +10,9 @@ import "../../../styles/styles.scss";
 const response = await fetch(`http://iris-api.candcom.com/api/posts?populate=*`);
 const data = await response.json();
 const posts = data.data;
-
-console.log
 const { category } = Astro.params;
-console.log(category)
 // recuperer les posts de la categorie
-
 const categoryPosts = posts.filter((post) => post.attributes.category.data.attributes.name === category);
-
-
 
 async function getCategories() {
   const response = await fetch("https://iris-api.candcom.com/api/categories?populate=*");
@@ -40,8 +34,6 @@ const customCrumbs = [
     href: `/blog/category/${category.attributes.name}`,
   })),
 ];
-
-
 
 ---
 <Layout title="Blog">

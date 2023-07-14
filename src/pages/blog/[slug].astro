@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@layouts/Layout.astro";
 import SingleBlogItem from "@components/Blog/SingleBlogItem.jsx";
+import { SEO } from "astro-seo";
 import type { APIContext } from "astro";
 import { previousThursday } from "date-fns";
 import { isAspectRatioString } from "@astrojs/image/dist/loaders";
@@ -8,18 +9,18 @@ import { isAspectRatioString } from "@astrojs/image/dist/loaders";
 const response = await fetch(`http://iris-api.candcom.com/api/posts?populate=*`);
 const data = await response.json();
 const posts = data.data;
-console.log("Posts", posts);
 const {slug} = Astro.params;
-console.log("slug", slug)
+
 
 const post = posts.find((post) => post.attributes.slug === slug);
-console.log("PostUnique", post)
+
 if (!post) return Astro.redirect("/404");
 const { title, publishedAt, content, author, featureImage, readingTime} = post.attributes;
 
 ---
 
-<BaseLayout title="article de blog">
+
+<BaseLayout title={title}>
   <SingleBlogItem  
   title={title} 
   publishedAt={publishedAt}
