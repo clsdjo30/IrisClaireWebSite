@@ -48,8 +48,12 @@ const makeTitle = title
       canonical={canonicalURL}
       twitter={{
         creator: author,
-        site: Astro?.site?.hostname,
-        card: "summary_large_image",
+        site: makeUrl,
+        title: title,
+        description: description,
+        image: resolvedImageWithDomain,
+        imageAlt: imageAlt,
+        card: "summary",
       }}
       openGraph={{
         basic: {
