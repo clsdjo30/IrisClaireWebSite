@@ -21,13 +21,14 @@ const canonicalURL = new URL(
 
 const makeUrl = new URL(image, Astro.site).toString();
 
-console.log(canonicalURL)
+console.log('ADRESSE',canonicalURL)
 
 const resolvedImageWithDomain = new URL(
   image,
-  Astro.site
+  'http://iris-api.candcom.com'
 ).toString();
-console.log(resolvedImageWithDomain)
+
+console.log('Image URL',resolvedImageWithDomain)
 
 
 const makeTitle = title
