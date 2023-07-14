@@ -1,16 +1,25 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import Container from "@components/container.astro";
+import Layout from "@layouts/BlogLayout.astro";
+import Container from "@components/blogContainer.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import BlogGrid from "@components/Blog/BlogGrid.jsx";
 import BlogHeader from "@components/Blog/BlogHeader";
 import { Breadcrumbs } from "astro-breadcrumbs";
 import "../../styles/styles.scss";
+import Aside from "@components/Blog/BlogAsideSection.jsx";
 
 const response = await fetch(`http://iris-api.candcom.com/api/posts?populate=*`);
 const data = await response.json();
 const posts = data.data;
 const { category } = Astro.params;
+
+const sortedPosts = posts.sort((a, b) => {
+  const dateA = new Date(a.attributes?.updatedAt).getTime();
+  const dateB = new Date(b.attributes?.updatedAt).getTime();
+  return dateB - dateA;
+});
+
+const latestPosts = sortedPosts.slice(0, 5);
 
 // recuperer les posts de la categorie
 const categoryPosts = posts.filter((post) => post.attributes.category.data.attributes.name === category);
@@ -38,7 +47,7 @@ const customCrumbs = [
 
 ---
 <Layout title="Blog">
-  <Container class="w-10/12 pb-3 bg-slate-100 h-auto mb-10 pt-6">
+  <Container class="w-full md:w-10/12 pb-3 bg-slate-100 h-auto mb-10 pt-6">
     <Sectionhead>
       <Fragment slot="title">{category}</Fragment>
       <Fragment slot="desc">
@@ -90,34 +99,7 @@ const customCrumbs = [
         <BlogGrid posts={categoryPosts} client:load />
       </div>
 
-      <aside class="w-full md:w-1/3 flex flex-col items-center md:px-10">
-        <div
-          class="bg-gradient-to-r from-violet-700 from-10% via-violet-800 to-violet-900 to-70% py-8 px-8 rounded-md">
-          <h3 class="mt-10 text-xl font-bold text-violet-100 text-center">
-            Votre compagnon divinatoire personnalisé
-          </h3>
-          <div class="mt-10">
-            <img src="/header.png" alt="Astronaut in the air" class="w-96" />
-          </div>
-          <div class="mb-6">
-            <p class="text-sm mt-4 text-violet-200 max-w-xl text-justify">
-              Plongez dans votre avenir et découvrez les mystères qui
-              l'entourent ! Vous obtiendrez des réponses qui vont aideront à
-              mieux vous comprendre et à prendre des décisions.
-            </p>
-            <div class="w-full mt-20 flex flex-col gap-5">
-              <button
-                class="flex mx-auto text-violet-900 font-semibold rounded-full bg-violet-100 border-0 py-2 px-16 focus:outline-none hover:bg-violet-600 hover:text-violet-100 text-lg">
-                App Store
-              </button>
-              <button
-                class="flex mx-auto text-violet-900 font-semibold rounded-full bg-violet-100 border-0 py-2 px-16 focus:outline-none hover:bg-violet-600 hover:text-violet-100 text-lg">
-                Play Store
-              </button>
-            </div>
-          </div>
-        </div>
-      </aside>
+      <Aside categoriesList={categoriesList} latestPosts={latestPosts} />
     </div>
   </Container>
 </Layout>
