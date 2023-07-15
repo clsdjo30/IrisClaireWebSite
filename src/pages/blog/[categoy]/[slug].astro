@@ -1,10 +1,8 @@
 ---
-import SinglePostLayout from "@layouts/SinglePostLayout.astro";
+import Layout from "@layouts/BlogLayout.astro";
+import Container from "@components/blogContainer.astro";
 import SingleBlogItem from "@components/Blog/SingleBlogItem.jsx";
-import { SEO } from "astro-seo";
-import type { APIContext } from "astro";
-import { previousThursday } from "date-fns";
-import { isAspectRatioString } from "@astrojs/image/dist/loaders";
+import Aside from "@components/Blog/BlogAsideSection.jsx";
 
 const response = await fetch(
   `http://iris-api.candcom.com/api/posts?populate=*`
@@ -12,6 +10,25 @@ const response = await fetch(
 const data = await response.json();
 const posts = data.data;
 const { slug } = Astro.params;
+async function getCategories() {
+  const response = await fetch(
+    "https://iris-api.candcom.com/api/categories?populate=*"
+  );
+  const categoriesData = await response.json();
+  const categoriesList = categoriesData.data;
+
+  return categoriesList;
+}
+
+const sortedPosts = posts.sort((a, b) => {
+  const dateA = new Date(a.attributes?.updatedAt).getTime();
+  const dateB = new Date(b.attributes?.updatedAt).getTime();
+  return dateB - dateA;
+});
+
+const latestPosts = sortedPosts.slice(0, 5);
+
+const categoriesList = await getCategories();
 
 const post = posts.find((post) => post.attributes.slug === slug);
 
@@ -25,24 +42,30 @@ const {
   readingTime,
   description,
   imagedescription,
+  categorySlug,
 } = post.attributes;
-
-
 ---
 
-<SinglePostLayout
+<Layout
   title={title}
   image={featureImage.data[0].attributes?.url}
   description={description}
   imageAlt={imagedescription}
   author={author.data.attributes?.name}
-  slug={slug}>
-  <SingleBlogItem
-    title={title}
-    publishedAt={publishedAt}
-    content={content}
-    author={author}
-    featureImage={featureImage}
-    readingTime={readingTime}
-  />
-</SinglePostLayout>
+  >
+  <Container class="w-full md:w-10/12 bg-slate-100 h-auto mb-10">
+    <div class="container w-full mx-auto flex flex-wrap pt-6">
+      <div class="w-full md:w-2/3 flex flex-col items-center px-6 ">
+        <SingleBlogItem
+          title={title}
+          publishedAt={publishedAt}
+          content={content}
+          author={author}
+          featureImage={featureImage}
+          readingTime={readingTime}
+        />
+      </div>
+      <Aside categoriesList={categoriesList} latestPosts={latestPosts} categorySlug={categorySlug}/>
+    </div>
+  </Container>
+</Layout>

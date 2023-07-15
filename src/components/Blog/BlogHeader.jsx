@@ -1,3 +1,4 @@
+
 export default function BlogHeader({ posts }) {
   // isAhead
   const isAhead = posts.find((post) => post.attributes.isAhead === true);
@@ -10,6 +11,8 @@ export default function BlogHeader({ posts }) {
       ? aheadContent.substring(0, 100) + "..."
       : aheadContent;
   const aheadSlug = isAhead.attributes.slug;
+  const aheadCategory = isAhead.attributes.category.data.attributes?.name;
+  console.log("1 Category", aheadCategory)
   // console.log("1 Slug", aheadSlug);
 
   // isSecond
@@ -23,6 +26,7 @@ export default function BlogHeader({ posts }) {
       ? secondPostContent.substring(0, 50) + "..."
       : secondPostContent;
   const secondSlug = isSecond.attributes.slug;
+  const secondCategory = isSecond.attributes.category.data.attributes?.name;
   // isThird
   const isThird = posts.find((post) => post.attributes.isThird === true);
   const thirdPostImage =
@@ -33,7 +37,10 @@ export default function BlogHeader({ posts }) {
       ? thirdPostTitle.substring(0, 50) + "..."
       : thirdPostTitle;
   const thirdSlug = isThird.attributes.slug;
+  const thirdCategory = isThird.attributes.category.data.attributes?.name;
   // SLug
+
+
 
   return (
     <div className="w-full flex flex-row flex-wrap mx-auto justify-content-center">
@@ -52,7 +59,7 @@ export default function BlogHeader({ posts }) {
               {firstContent}
             </p>
             <a
-              href={`/blog/${aheadSlug}`}
+              href={`/blog/${aheadCategory}/${aheadSlug}`}
               className="mt-3 text-orange-500 inline-flex items-center font-semibold">
               Lire la suite
               {/* <svg
@@ -84,7 +91,7 @@ export default function BlogHeader({ posts }) {
                 </h2>
                 <p className="leading-relaxed text-xs text-violet-800">{secondContent}</p>
                 <a
-                  href={`/blog/${secondSlug}`}
+                  href={`/blog/${secondCategory}/${secondSlug}`}
                   className="mt-3 text-orange-500 inline-flex items-center text-xs">
                   Lire la suite
                   {/* <svg
@@ -116,7 +123,7 @@ export default function BlogHeader({ posts }) {
                 </h2>
                 <p className="leading-relaxed text-xs text-violet-800">{thirdContent}</p>
                 <a
-                  href={`/blog/${thirdSlug}`}
+                  href={`/blog/${thirdCategory}/${thirdSlug}`}
                   className="mt-3 text-orange-500 inline-flex items-center text-xs">
                   Lire la suite
                   {/* <svg

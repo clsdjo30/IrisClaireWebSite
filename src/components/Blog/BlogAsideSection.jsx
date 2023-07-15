@@ -1,7 +1,7 @@
 
 
 export default function BlogAsideSection({ latestPosts, categoriesList}) {
-return (
+  return (
     <aside class="w-full md:w-1/3 flex flex-col items-center">
         {/* <!-- bloc Last Post --> */}
         <div
@@ -10,10 +10,11 @@ return (
             Articles Recents
           </h3>
           {
-            latestPosts.map((post) => (
+            latestPosts .map((post) => (
+              
               <ul class="list-disc ml-8 my-1">
                 <li class="text-sm font-light text-purple-900 hover:text-orange-500">
-                  <a href={`/blog/${post.attributes?.slug}`}>
+                  <a href={`/blog/${post.attributes?.category.data.attributes?.name}/${post.attributes?.slug}`}>
                     {post.attributes?.title}
                   </a>
                 </li>
