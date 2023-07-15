@@ -2,7 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/blogContainer.astro";
 import Sectionhead from "@components/sectionhead.astro";
-import BlogGrid from "@components/Blog/BlogGrid.jsx";
+import BlogContainer from "@components/Blog/BlogContainer.jsx"
 import BlogHeader from "@components/Blog/BlogHeader";
 import { Breadcrumbs } from "astro-breadcrumbs";
 import Aside from "@components/Blog/BlogAsideSection.jsx";
@@ -49,7 +49,7 @@ const customCrumbs = [
     text: category.attributes?.name,
     href: `/blog/${category.attributes?.name}`,
   })),
-];
+]; 
 ---
 
 <Layout 
@@ -105,7 +105,7 @@ title="Le Blog d'Iris Clair"
     <div class="container w-full mx-auto flex flex-wrap py-6">
       <div class="w-full md:w-2/3 flex flex-col items-center px-3">
         <BlogHeader posts={posts} client:load />
-        <BlogGrid posts={posts} client:load />
+        <BlogContainer posts={posts} client:load/>
       </div>
       <Aside categoriesList={categoriesList} latestPosts={latestPosts} />
     </div>

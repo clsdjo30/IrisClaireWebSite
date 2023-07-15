@@ -12,7 +12,6 @@ export default function BlogHeader({ posts }) {
       : aheadContent;
   const aheadSlug = isAhead.attributes.slug;
   const aheadCategory = isAhead.attributes.category.data.attributes?.name;
-  console.log("1 Category", aheadCategory)
   // console.log("1 Slug", aheadSlug);
 
   // isSecond
