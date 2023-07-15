@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon";
+import Link from "./ui/link.astro";
 ---
 
 <footer
@@ -79,9 +80,17 @@ import { Icon } from "astro-icon";
       <div class="text-sm font-semibold">Follow</div>
       <!-- List des icone reseaux sociaux -->
       <div class="flex justify-center md:justify-start gap-4 mt-3">
-        <Icon name="bx:bxl-instagram" class="text-violet-200 h-8 w-8" />
-        <Icon name="bx:bxl-facebook" class="text-violet-200 h-8 w-8" />
-        <Icon name="bx:bxl-pinterest" class="text-violet-200 h-8 w-8" />
+        <div class="hidden lg:flex items-center gap-4">
+          <Link href="https://www.instagram.com/" size="sm" style="muted" target="_blank">
+            <Icon name="bx:bxl-instagram" class="text-violet-800 hover:text-orange-500 h-8 w-8" />
+          </Link>
+          <Link href="https://www.pinterest.fr/Djodjo30/" size="sm" style="muted" target="_blank">
+            <Icon name="bx:bxl-pinterest" class="text-violet-800 hover:text-orange-500 h-8 w-8" />
+          </Link>
+          <Link href="https://www.facebook.com/" size="sm" style="muted" target="_blank">
+            <Icon name="bx:bxl-facebook" class="text-violet-800 hover:text-orange-500 h-8 w-8" />
+          </Link>
+        </div>
       </div>
     </div>
   </div>
