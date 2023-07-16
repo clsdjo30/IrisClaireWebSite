@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://astroship.web3templates.com/sitemap-index.xml
+Sitemap: https://chimerical-caramel-133df7.netlify.app/sitemap-index.xml
