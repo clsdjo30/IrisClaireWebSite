@@ -17,7 +17,6 @@ export default defineConfig({
     }),
     mdx(),
     sitemap({
-      hostname: "https://chimerical-caramel-133df7.netlify.app",
       customPages: [
         
           "https://main--chimerical-caramel-133df7.netlify.app/blog/Travail%20et%20Carri%C3%A8res",
