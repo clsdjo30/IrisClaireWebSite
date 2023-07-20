@@ -58,7 +58,7 @@ export default function BlogHeader({ posts }) {
               {firstContent}
             </p>
             <a
-              href={`/blog/${aheadCategory}/${aheadSlug}`}
+              // href={`/blog/${aheadCategory}/${aheadSlug}`}
               className="mt-3 text-orange-500 inline-flex items-center font-semibold">
               Lire la suite
               {/* <svg
@@ -90,7 +90,7 @@ export default function BlogHeader({ posts }) {
                 </h2>
                 <p className="leading-relaxed text-xs text-violet-800">{secondContent}</p>
                 <a
-                  href={`/blog/${secondCategory}/${secondSlug}`}
+                  // href={`/blog/${secondCategory}/${secondSlug}`}
                   className="mt-3 text-orange-500 inline-flex items-center text-xs">
                   Lire la suite
                   {/* <svg
@@ -122,7 +122,7 @@ export default function BlogHeader({ posts }) {
                 </h2>
                 <p className="leading-relaxed text-xs text-violet-800">{thirdContent}</p>
                 <a
-                  href={`/blog/${thirdCategory}/${thirdSlug}`}
+                  // href={`/blog/${thirdCategory}/${thirdSlug}`}
                   className="mt-3 text-orange-500 inline-flex items-center text-xs">
                   Lire la suite
                   {/* <svg
