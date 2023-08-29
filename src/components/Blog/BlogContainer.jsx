@@ -16,12 +16,13 @@ const BlogContainer = ({ posts }) => {
 
   return (
     <>
-      <BlogGrid posts={postsToShow} />
-      {/* <Pagination
+      
+      <BlogGrid posts={postsToShow}/>
+      <Pagination
         currentPage={currentPage}
         totalPosts={posts.length}
         onPageChange={handlePageChange}
-      /> */}
+      />
     </>
   );
 };

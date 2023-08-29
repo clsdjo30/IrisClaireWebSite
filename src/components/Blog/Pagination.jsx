@@ -23,7 +23,7 @@ const Pagination = ({ currentPage, totalPosts, onPageChange }) => {
   };
 
   return (
-    <div className="flex justify-center mt-4">
+    <div className="flex justify-center mt-10">
     <button
       className={`pr-3 pagination-button text-violet-800 ${
         currentPage === 1 ? "opacity-50 cursor-not-allowed" : ""

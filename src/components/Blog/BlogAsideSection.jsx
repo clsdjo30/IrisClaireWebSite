@@ -1,8 +1,9 @@
 
 
 export default function BlogAsideSection({ latestPosts, categoriesList}) {
+  // console.log('categoriesList', categoriesList)
   return (
-    <aside class="w-full md:w-1/3 flex flex-col items-center">
+    <aside class="w-full md:w-1/3 flex flex-col items-center mt-10 lg:mt-5">
         {/* <!-- bloc Last Post --> */}
         <div
           class="w-11/12 md:w-10/12 flex flex-col bg-purple-100 px-2 py-3 rounded-md border mb-10">

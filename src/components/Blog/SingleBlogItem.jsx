@@ -1,12 +1,12 @@
 import { formatDistance, format } from "date-fns";
 import ReactMarkdown from "react-markdown";
 export default function SingleBlog({
-  title,
-  publishedAt,
-  content,
-  author,
-  featureImage,
-  readingTime,
+    title,
+    publishedAt,
+    content,
+    author,
+    featureImage,
+    readingTime,
 }) {
   const imageUrl = featureImage.data[0].attributes.formats.medium.url;
 

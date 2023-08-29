@@ -1,6 +1,55 @@
 ---
 import { Icon } from "astro-icon";
 import Link from "./ui/link.astro";
+
+const siteLink = [
+  {
+    name: "Team",
+    url: "/team",
+  },
+  {
+    name: "Contact",
+    url: "/contact",
+  },
+  {
+    name: "Blog",
+    url: "/blog",
+  },
+];
+
+const legalLink = [
+  {
+    name: "CGV/CGU",
+    url: "/cgv-cgu",
+  },
+  {
+    name: "Mentions légales",
+    url: "/mentions-legales",
+  },
+  {
+    name: "Politique de confidentialité",
+    url: "/politique-de-confidentialite",
+  },
+  {
+    name: "Charte d'Ir",
+    url: "/rgpd",
+  },
+];
+
+const socialLink = [
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/",
+  },
+  {
+    name: "Pinterest",
+    url: "https://www.pinterest.fr/Djodjo30/",
+  },
+  {
+    name: "Facebook",
+    url: "https://www.facebook.com/",
+  },
+];
 ---
 
 <footer
@@ -21,81 +70,65 @@ import Link from "./ui/link.astro";
         <!-- Code block for white alternative button ends -->
       </div>
     </div>
-    <div class="w-full text-center text-violet-200 md:w-1/5 md:text-left mt-10 md:mt-0">
+    <div
+      class="w-full text-center text-violet-200 md:w-1/5 md:text-left mt-10 md:mt-0">
       <div class="text-sm font-semibold">Company</div>
       <ul class="flex md:flex-col justify-center gap-10 md:gap-0 text-xs">
-        <li class="pt-3">
-          <a
-            class="underline decoration-transparent underline-offset-4 transition hover:decoration-slate-700"
-            href="#"
-            rel="noopener noreferrer"
-            target="_blank">
-            About
-          </a>
-        </li>
-        <li class="pt-3">
-          <a
-            class="underline decoration-transparent underline-offset-4 transition hover:decoration-slate-700"
-            href="#"
-            rel="noopener noreferrer"
-            target="_blank">
-            Team
-          </a>
-        </li>
-        <li class="pt-3">
-          <a
-            class="underline decoration-transparent underline-offset-4 transition hover:decoration-slate-700"
-            href="#"
-            rel="noopener noreferrer"
-            target="_blank">
-            Blog
-          </a>
-        </li>
+        {
+          siteLink.map(({ name, url }) => (
+            <li class="pt-3">
+              <a
+                class="underline decoration-transparent underline-offset-4 transition hover:decoration-slate-700"
+                href={url}
+                rel="noopener noreferrer">
+                {name}
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </div>
-    <div class="w-full text-center text-violet-200 md:w-1/5 md:text-left mt-5 md:mt-0">
+    <div
+      class="w-full text-center text-violet-200 md:w-1/5 md:text-left mt-5 md:mt-0">
       <div class="text-sm font-semibold">Legal</div>
-      <ul class="flex md:flex-col justify-center gap-10 md:gap-0 text-xs" >
-        <li class="pt-3">
-          <a
-            class="underline decoration-transparent underline-offset-4 transition hover:decoration-slate-700"
-            href="#"
-            rel="noopener noreferrer"
-            target="_blank">
-            Terms of service
-          </a>
-        </li>
-        <li class="pt-3">
-          <a
-            class="underline decoration-transparent underline-offset-4 transition hover:decoration-slate-700"
-            href="#"
-            rel="noopener noreferrer"
-            target="_blank">
-            Privacy policy
-          </a>
-        </li>
+      <ul class="flex md:flex-col justify-center gap-10 md:gap-0 text-xs">
+        {
+          legalLink.map(({ name, url }) => (
+            <li class="pt-3">
+              <a
+                class="underline decoration-transparent underline-offset-4 transition hover:decoration-slate-700"
+                href={url}
+                rel="noopener noreferrer">
+                {name}
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </div>
-    <div class="w-full text-center text-violet-200 md:w-1/5 md:text-left mt-5 md:mt-0">
+    <div
+      class="w-full text-center text-violet-200 md:w-1/5 md:text-left mt-5 md:mt-0">
       <div class="text-sm font-semibold">Follow</div>
       <!-- List des icone reseaux sociaux -->
       <div class="flex justify-center md:justify-start gap-4 mt-3">
         <div class="flex items-center gap-4">
-          <Link href="https://www.instagram.com/" size="sm" style="muted" target="_blank">
-            <Icon name="bx:bxl-instagram" class="text-violet-800 hover:text-orange-500 h-6 w-6" />
-          </Link>
-          <Link href="https://www.pinterest.fr/Djodjo30/" size="sm" style="muted" target="_blank">
-            <Icon name="bx:bxl-pinterest" class="text-violet-800 hover:text-orange-500 h-6 w-6" />
-          </Link>
-          <Link href="https://www.facebook.com/" size="sm" style="muted" target="_blank">
-            <Icon name="bx:bxl-facebook" class="text-violet-800 hover:text-orange-500 h-6 w-6" />
-          </Link>
+          {
+            socialLink.map(({ name, url }) => (
+              <Link href={url} size="sm" style="muted" target="_blank">
+                <Icon
+                  name={`bx:bxl-${name.toLowerCase()}`}
+                  class="text-violet-800 hover:text-orange-500 h-6 w-6"
+                />
+              </Link>
+            ))
+          }
         </div>
       </div>
     </div>
   </div>
   <div
     class="container mx-auto border-t border-slate-200 p-8 text-center text-sm text-violet-200 dark:border-violet-200 md:flex-row md:px-12">
-    Made in Montpellier with 🐕  ©Copyright 2023 by DIGIX SAS. All rights reserved.
+    Made in Montpellier with 🐕 ©Copyright 2023 by DIGIX SAS. All rights
+    reserved.
   </div>
 </footer>

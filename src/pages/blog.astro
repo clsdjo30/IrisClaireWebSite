@@ -1,8 +1,8 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import BlogLayout from "@layouts/BlogLayout.astro";
 import Container from "@components/blogContainer.astro";
 import Sectionhead from "@components/sectionhead.astro";
-import BlogContainer from "@components/Blog/BlogContainer.jsx"
+import BlogContainer from "@components/Blog/BlogContainer.jsx";
 import BlogHeader from "@components/Blog/BlogHeader";
 import { Breadcrumbs } from "astro-breadcrumbs";
 import Aside from "@components/Blog/BlogAsideSection.jsx";
@@ -14,7 +14,6 @@ const response = await fetch(
 );
 const data = await response.json();
 const posts = data.data;
-
 
 // const resolvedImageWithDomain = new URL(
 //   "/opengraph.jpg",
@@ -40,7 +39,6 @@ const sortedPosts = posts.sort((a, b) => {
 const latestPosts = sortedPosts.slice(0, 5);
 
 const categoriesList = await getCategories();
-console.log(categoriesList)
 
 const customCrumbs = [
   {
@@ -51,11 +49,18 @@ const customCrumbs = [
     text: category.attributes?.name,
     href: `/blog/${category.attributes?.name}`,
   })),
-]; 
+];
 ---
 
-<Layout 
-title="Le Blog d'Iris Clair"
+<BlogLayout
+  title="Le Blog d'Iris Clair"
+  description="Tous les sujets du moment sur notre blog : astrologie, horoscope, spiritualité, rituel, développement personnel…"
+  image="https://iris-clair.vercel.app/opengraph.jpg"
+  imageAlt="Iris Clair Blog"
+  author="Iris Clair"
+  url="https://iris-clair.vercel.app/blog"
+
+ 
 >
   <Container class="w-full md:w-10/12 pb-3 bg-slate-100 h-auto mb-10 pt-6">
     <Sectionhead>
@@ -87,7 +92,6 @@ title="Le Blog d'Iris Clair"
           </path><polyline points="9 22 9 12 15 12 15 22"></polyline>
         </svg>
 
-       
         <svg
           slot="separator"
           xmlns="http://www.w3.org/2000/svg"
@@ -107,9 +111,10 @@ title="Le Blog d'Iris Clair"
     <div class="container w-full mx-auto flex flex-wrap py-6">
       <div class="w-full md:w-2/3 flex flex-col items-center px-3">
         <BlogHeader posts={posts} client:load />
-        <BlogContainer posts={posts} client:load/>
+        
+        <BlogContainer posts={posts} client:load />
       </div>
       <Aside categoriesList={categoriesList} latestPosts={latestPosts} />
     </div>
   </Container>
-</Layout>
+</BlogLayout>
