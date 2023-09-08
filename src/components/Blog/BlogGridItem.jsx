@@ -7,8 +7,7 @@ export default function BlogGridItem({ post }) {
   const featuredImage = post.attributes.featureImage.data[0].attributes.formats.small?.url;
   const category = post.attributes.category.data.attributes.name;
   const categorySlug = post.attributes.category.data?.attributes?.slug;
-  const slug = post.slug;
-  console.log('IMAGE', featuredImage)
+  const slug = post.attributes?.slug;
 
   let content = post.attributes?.description;
 
@@ -31,7 +30,7 @@ export default function BlogGridItem({ post }) {
           <h2 className="text-base font-bold text-violet-800">{title}</h2>
           <p className="text-sm font-light mt-3 text-violet-900">{content}</p>
         </div>
-        <div className="w-full h-20 relative left-56 top-5 ">
+        <div className="w-full">
           <button class="mt-5 mx-auto text-violet-900 font-semibold rounded-full bg-violet-100 border-0 py-1 px-8 focus:outline-none hover:bg-violet-600 hover:text-violet-100 text-lg">
             <a href={`/blog/${categorySlug}/${slug}`} className="text-sm">
               Lire la suite
