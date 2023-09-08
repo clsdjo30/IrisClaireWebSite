@@ -4,10 +4,11 @@ export default function BlogGridItem({ post }) {
   
   const title = post.attributes.title;
 
-  const featuredImage = post.attributes.featureImage.data[0].attributes;
+  const featuredImage = post.attributes.featureImage.data[0].attributes.formats.small?.url;
   const category = post.attributes.category.data.attributes.name;
   const categorySlug = post.attributes.category.data?.attributes?.slug;
   const slug = post.slug;
+  console.log('IMAGE', featuredImage)
 
   let content = post.attributes?.description;
 
@@ -17,7 +18,7 @@ export default function BlogGridItem({ post }) {
     <div className="border border-violet-900 flex flex-col lg:flex-row justify-center items-center rounded-xl p-5 mx-5 md:4/6 overflow-hidden transition-transform h-auto mt-5">
       <div className="relative lg:w-1/2 ">
         <img
-          src={`http://iris-api.candcom.com${featuredImage?.url}`}
+          src={`http://iris-api.candcom.com${featuredImage}`}
           alt="gallery"
           className="object-cover object-top h-54 lg:h-48 rounded-t-lg"
         />

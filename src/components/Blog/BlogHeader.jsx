@@ -2,7 +2,7 @@ export default function BlogHeader({ posts }) {
   // isAhead
   const isAhead = posts.find((post) => post.attributes.isAhead === true);
   const aheadImage =
-    isAhead.attributes.featureImage.data[0].attributes.formats.large.url;
+    isAhead.attributes.featureImage.data[0].attributes.formats.small.url;
   const aheadTitle = isAhead.attributes.title;
   const aheadContent = isAhead.attributes.description;
   const firstContent =
@@ -11,11 +11,11 @@ export default function BlogHeader({ posts }) {
       : aheadContent;
   const aheadSlug = isAhead.attributes.slug;
   const aheadCategory = isAhead.attributes.category.data.attributes?.name;
-
+  
   // isSecond
   const isSecond = posts.find((post) => post.attributes.isSecond === true);
   const secondPostImage =
-    isSecond.attributes.featureImage.data[0].attributes.formats.large.url;
+    isSecond.attributes.featureImage.data[0].attributes.formats.small.url;
   const secondPostTitle = isSecond.attributes.title;
   const secondPostContent = isSecond.attributes.description;
   const secondContent =
@@ -28,7 +28,7 @@ export default function BlogHeader({ posts }) {
   // isThird
   const isThird = posts.find((post) => post.attributes.isThird === true);
   const thirdPostImage =
-    isThird.attributes.featureImage.data[0].attributes.formats.large.url;
+    isThird.attributes.featureImage.data[0].attributes.formats.small.url;
   const thirdPostTitle = isThird.attributes.title;
   const thirdPostContent = isThird.attributes.description;
   const thirdContent =
