@@ -31,7 +31,7 @@ const legalLink = [
     url: "/politique-de-confidentialite",
   },
   {
-    name: "Charte d'Ir",
+    name: "Charte d'Iris Claire",
     url: "/rgpd",
   },
 ];
@@ -71,9 +71,9 @@ const socialLink = [
       </div>
     </div>
     <div
-      class="w-full text-center text-violet-200 md:w-1/5 md:text-left mt-10 md:mt-0">
+      class="w-full text-center text-violet-200 md:w-1/5 md:text-left mt-10 md:mt-0 ">
       <div class="text-sm font-semibold">Company</div>
-      <ul class="flex md:flex-col justify-center gap-10 md:gap-0 text-xs">
+      <ul class="flex flex-col justify-content-start align-top gap-1 text-xs mb-5">
         {
           siteLink.map(({ name, url }) => (
             <li class="pt-3">
@@ -91,7 +91,7 @@ const socialLink = [
     <div
       class="w-full text-center text-violet-200 md:w-1/5 md:text-left mt-5 md:mt-0">
       <div class="text-sm font-semibold">Legal</div>
-      <ul class="flex md:flex-col justify-center gap-10 md:gap-0 text-xs">
+      <ul class="flex flex-col justify-center gap-1 text-xs mb-5">
         {
           legalLink.map(({ name, url }) => (
             <li class="pt-3">
@@ -128,7 +128,7 @@ const socialLink = [
   </div>
   <div
     class="container mx-auto border-t border-slate-200 p-8 text-center text-sm text-violet-200 dark:border-violet-200 md:flex-row md:px-12">
-    Made in Montpellier with 🐕 ©Copyright 2023 by DIGIX SAS. All rights
+    Made in Paris with 🐕 ©Copyright 2023 by DigitalFy SAS. All rights
     reserved.
   </div>
 </footer>
