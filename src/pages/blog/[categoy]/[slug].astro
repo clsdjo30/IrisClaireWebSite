@@ -1,5 +1,5 @@
 ---
-import Layout from "@layouts/BlogLayout.astro";
+import BlogLayout from "@layouts/BlogLayout.astro";
 import Container from "@components/blogContainer.astro";
 import SingleBlogItem from "@components/Blog/SingleBlogItem.jsx";
 import Aside from "@components/Blog/BlogAsideSection.jsx";
@@ -46,12 +46,14 @@ const {
 } = post.attributes;
 ---
 
-<Layout
+<BlogLayout
   title={title}
   image={featureImage.data[0].attributes?.url}
   description={description}
   imageAlt={imagedescription}
   author={author.data.attributes?.name}
+  url={`https://iris.candcom.com/blog/${categorySlug}/${slug}`}
+  
   >
   <Container class="w-full md:w-10/12 bg-slate-100 h-auto mb-10">
     <div class="container w-full mx-auto flex flex-wrap pt-6">
@@ -68,4 +70,4 @@ const {
       <Aside categoriesList={categoriesList} latestPosts={latestPosts}/>
     </div>
   </Container>
-</Layout>
+</BlogLayout>
