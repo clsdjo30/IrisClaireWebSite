@@ -1,10 +1,10 @@
 ---
 draft: false
-name: "David L"
+name: "Cédric"
 title: "Developpeur"
 avatar: {
     src: "/team/cedric.png",
-    alt: "David L"
+    alt: "Cédric"
 }
 publishDate: "2022-11-10 15:39"
 ---
