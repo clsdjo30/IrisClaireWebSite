@@ -15,6 +15,7 @@ export interface Props {
 const { title, image, description, imageAlt, author} = Astro.props;
 
 const canonicalURL = new URL(
+  "https://irisclaire.com/" +
   Astro.url.pathname,
   Astro.site
 ).toString();
