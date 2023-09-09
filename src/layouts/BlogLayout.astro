@@ -12,7 +12,8 @@ export interface Props {
   author: string;
   url: string;
 }
-const { title, image, description, imageAlt, author} = Astro.props;
+const { title, image, description, imageAlt, author,  } = Astro.props;
+const { href } = Astro.url;
 
 const canonicalURL = new URL(
   "https://irisclaire.com/" +
@@ -20,13 +21,15 @@ const canonicalURL = new URL(
   Astro.site
 ).toString();
 
-const makeUrl = new URL(image, Astro.site).toString();
+const makeUrl = new URL(href, Astro.site).toString();
 
 const resolvedImageWithDomain = new URL(
   image,
   'http://iris-api.candcom.com'
 ).toString();
 
+
+console.log('IMAGE ASTRO PROPS', resolvedImageWithDomain)
 
 const makeTitle = title
   ? title + " | " + "Le Blog d'Iris Clair"
@@ -38,7 +41,7 @@ const makeTitle = title
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/iris_003.png" />
+    <link rel="icon" type="image/svg+xml" href="/adaptive-icon.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="generator" content={Astro.generator} />
 
@@ -49,7 +52,7 @@ const makeTitle = title
       canonical={canonicalURL}
       twitter={{
         creator: author,
-        site: makeUrl,
+        site: href,
         title: title,
         description: description,
         image: resolvedImageWithDomain,
