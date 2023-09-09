@@ -14,30 +14,35 @@ import Contactform from "@components/contactform.astro";
       <Fragment slot="desc">We are a here to help.</Fragment>
     </Sectionhead>
 
-    <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
+    <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-20">
       <div>
-        <h2 class="font-medium text-2xl text-gray-800">Contact Astroship</h2>
-        <p class="text-lg leading-relaxed text-slate-500 mt-3">
-          Have something to say? We are here to help. Fill up the form or send
-          email or call phone.
+        <h2 class="text-4xl font-bold text-violet-700 lg:tracking-tight">
+          Contacter Iris Claire
+        </h2>
+        <p class="text-base font-semibold leading-relaxed text-violet-900 mt-3">
+          Pour toute question, n'hésitez pas à nous contacter via le formulaire.
+          Nous vous répondrons dans les meilleurs délais.
         </p>
         <div class="mt-5">
           <div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:map-marker" />
-            <span>1734 Sanfransico, CA 93063</span>
-          </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" /><a
-              href="mailto:hello@astroshipstarter.com"
-              >hello@astroshipstarter.com</a
-            >
-          </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
-            <Icon class="text-gray-400 w-4 h-4" name="uil:phone" /><a
-              href="tel:+1 (987) 4587 899">+1 (987) 4587 899</a
+            <Icon class="text-orange-700 w-4 h-4" name="uil:map-marker" />
+            <span class="text-sm font-semibold leading-relaxed text-violet-900">
+              99 Avenue Achille Peretti , 9220 Neuilly-sur-Seine
+            </span>
+          </div>
+          <div class="flex items-center mt-2 space-x-2 text-gray-600">
+            <Icon class="text-orange-700 w-4 h-4" name="uil:envelope" /><a
+              href="mailto:contact@irisclaire.com">
+              <span class="text-sm font-semibold leading-relaxed text-violet-900" >
+                contact@irisclaire.com
+              </span>
+              </a
             >
           </div>
+         
         </div>
       </div>
-      <div>
+      <div class="mb-20">
         <Contactform />
       </div>
     </div>
