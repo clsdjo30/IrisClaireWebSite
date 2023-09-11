@@ -6,25 +6,21 @@ const features = [
       "Est-ce que les réponses apportées par IRIS Claire sont aussi fiables qu'une consultation chez un voyant ?",
     description:
       "OUI. La fiabilité et la précision des réponses sont très important chez Iris Claire. L’équipe de IRIS Claire est composée d’un voyant, et de deux tarologues expérimentés et spécialisés dans le Tarot divinatoire, Ensemble ils ont créé IRIS Claire pour offrir des réponses authentiques et précises à vos questions. Vous pouvez avoir pleinement confiance en Iris Claire pour vous guider vers des éclaircissements précieux",
-    icon: "bx:bxs-briefcase",
   },
   {
     title: "Comment se déroule une consultation avec IRIS Claire ?",
     description:
       "Pour obtenir des réponses à vos questions sans délai d’attente depuis votre mobile rien de plus simple.Téléchargez l’application Iris Claire sur Google play et App Store. Posez votre question. Effectuez un tirage de Tarot Iris Claire.Obtenez une reponse personnalisée immédiatement !",
-    icon: "bx:bxs-data",
   },
   {
     title: "Combien va me couter ma question ?",
     description:
-      "Posez votre première question GRATUITEMENT ! Chez IRIS Claire, nous croyons en l'accessibilité de l'avenir pour tous. Notre service a été conçu pour offrir des réponses abordables à partir de seulement 0,99€ question ! Accédez à votre avenir dès maintenant et découvrez les réponses que vous cherchez.",
-    icon: "bx:bxs-bot",
+      "Posez votre première question GRATUITEMENT ! Chez IRIS Claire, nous croyons en l'accessibilité de l'avenir pour tous. Notre service a été conçu pour offrir des réponses abordables à partir de seulement 0,99€/question ! Accédez à votre avenir dès maintenant et découvrez les réponses que vous cherchez.",
   },
   {
-    title: "Combien de temps faut-il attendre avant de recevoir une réponse ",
+    title: "Combien de temps faut-il attendre avant de recevoir ma réponse ?",
     description:
-      "Votre réponse est IMMEDIATEMENT disponible. Quelque soit la complexité de votre question, IRIS Claire vous apporte une réponse immédiate pour vous accompagner dans vos doutes.",
-    icon: "bx:bxs-window-alt",
+      "Votre réponse est instantanément disponible. Quelque soit la nature de votre question, IRIS Claire vous répond sans délai.",
   },
 ];
 
