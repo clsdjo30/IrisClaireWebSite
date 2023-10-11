@@ -22,7 +22,7 @@ export default defineConfig({
         "https://irisclaire.com/blog/Amour",
         "https://irisclaire.com/blog/Amour/triangle-amoureux-comment-s-en-sortir",
         "https://irisclaire.com/blog/Amour/faut-il-etre-amis-avant-d-etre-en-couple",
-        // "https://irisclaire.com/blog/amour/comment-fonctionne-un-homme-au-debut-d-une-relation-bienvenue-dans-la-jungle",
+        "https://irisclaire.com/blog/Tarologie/explorez-les-mysteres-du-tarot-divinatoire-pour-decouvrir-votre-aven",
         // "https://irisclaire.com/blog/amour/les-choses-stupides-que-l-on-fait-par-amour-temoignages-epiques",
         // "https://irisclaire.com/blog/amour/la-peur-de-l-engagement-comment-y-faire-face",
         // "https://irisclaire.com/blog/amour/l-amour-vache-quand-cupidon-prend-des-vacances-a-la-ferme",
