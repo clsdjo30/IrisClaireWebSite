@@ -7,6 +7,7 @@ import BlogHeader from "@components/Blog/BlogHeader";
 import { Breadcrumbs } from "astro-breadcrumbs";
 import Aside from "@components/Blog/BlogAsideSection.jsx";
 
+
 import "../styles/styles.scss";
 
 const response = await fetch(
@@ -50,6 +51,54 @@ const customCrumbs = [
     href: `/blog/${category.attributes?.name}`,
   })),
 ];
+
+const carteResponse = await fetch(`https://iris-api.candcom.com/api/cartes?populate=*`);
+const carteData = await carteResponse.json();
+const cartes = carteData.data;
+
+ 
+  
+  const firstCard = cartes.find(carte => carte.attributes?.name)
+  const firstCardSignification = firstCard.attributes?.significations.data[0].attributes?.description;
+  const firstCardDescription = firstCard.attributes?.description;
+  const firstCardQualité = firstCard.attributes?.qualites;
+  const firstCardDéfaut = firstCard.attributes?.defauts;
+  const firstCardDelai = firstCard.attributes?.delai;
+  console.log('FIRST CARD INFO', firstCardDescription, firstCardQualité, firstCardDéfaut, firstCardDelai,firstCardSignification)
+
+  const secondCard = cartes.find(carte => carte.attributes?.name)
+  const secondCardSignification = secondCard.attributes?.significations.data[1].attributes?.description;
+  const secondCardDescription = secondCard.attributes?.description;
+  const secondCardQualite = secondCard.attributes?.qualites;
+  const secondCardDefaut = secondCard.attributes?.defauts;
+  const secondCardDelai = secondCard.attributes?.delai;
+  console.log('SECOND CARD INFO', secondCardDescription, secondCardQualite, secondCardDefaut, secondCardDelai,secondCardSignification)
+  
+  
+  const thirdCard = cartes.find(carte => carte.attributes?.name)
+  const thirdCardSignification = thirdCard.attributes?.significations.data[2].attributes?.description ;
+  const thirdCardDescription = thirdCard.attributes?.description;
+  const thirdCardQualite = thirdCard.attributes?.qualites;
+  const thirdCardDefaut = thirdCard.attributes?.defauts;
+  const thirdCardDelai = thirdCard.attributes?.delai;
+  console.log('THIRD CARD INFO', thirdCardDescription, thirdCardQualite, thirdCardDefaut, thirdCardDelai,thirdCardSignification)
+
+  const fourthCard = cartes.find(carte => carte.attributes?.name)
+  const fourthCardSignification = fourthCard.attributes?.significations.data[3].attributes?.description;
+  const fourthCardDescription = fourthCard.attributes?.description;
+  const fourthCardQualite = fourthCard.attributes?.qualites;
+  const fourthCardDefaut = fourthCard.attributes?.defauts;
+  const fourthCardDelai = fourthCard.attributes?.delai;
+  console.log('FOURTH CARD INFO', fourthCardDescription, fourthCardQualite, fourthCardDefaut, fourthCardDelai,fourthCardSignification)
+
+  const fithCard = cartes.find(carte => carte.attributes?.name)
+  const fithCardSignification = fithCard.attributes?.significations.data[4].attributes?.description;
+  const fithCardDescription = fithCard.attributes?.description;
+  const fithCardQualite = fithCard.attributes?.qualites;
+  const fithCardDefaut = fithCard.attributes?.defauts;
+  const fithCardDelai = fithCard.attributes?.delai;
+  console.log('FITH CARD INFO', fithCardDescription, fithCardQualite, fithCardDefaut, fithCardDelai,fithCardSignification)
+
 ---
 
 <BlogLayout
