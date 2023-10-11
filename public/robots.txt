@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://chimerical-caramel-133df7.netlify.app/sitemap-index.xml
+Sitemap: https://irisclaire.com/sitemap-index.xml
